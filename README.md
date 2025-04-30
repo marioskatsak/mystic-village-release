@@ -1,30 +1,29 @@
-# Mystic Village 🕊️
+# Mystic Village Full Project
 
-A narrative-driven mystic RPG API built with FastAPI.
-You are the last soul-walker in a forgotten village.
-The world changes each time you play.
+## Structure
 
-## Features
-- Random world generation
-- Dynamic NPC interactions (soon AI-enhanced)
-- Soul-based decision system
-- Built for web and mobile frontends
+- backend/main.py
+- frontend/components/*.js
+- assets/models/*.glb
+- assets/audio/*.wav
+- scripts/deploy_vercel.sh
+- scripts/eas.json
+- scripts/push_to_github.sh
 
 ## Setup
-```bash
-git clone https://github.com/yourusername/mystic-village.git
-cd mystic-village
-pip install -r requirements.txt
+
+### Backend
+cd backend
+pip install fastapi uvicorn openai python-dotenv
 uvicorn main:app --reload
-```
 
-## Endpoints
-- `/` → Health check
-- `/player` → Player info
-- `/village` → Static village state
-- `/npc/{id}` → Interact with an NPC
-- `/generate_world` → Generate random world instance
-- `/decision` → Handle player choice
+### Frontend
+cd frontend
+npm install @react-three/fiber @react-three/drei three react react-dom
+npm start
 
-## License
-MIT
+### assets/models
+Place .glb files in /assets/models
+
+### Scripts
+chmod +x scripts/*.sh
